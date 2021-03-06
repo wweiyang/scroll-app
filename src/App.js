@@ -34,15 +34,22 @@ export default function App() {
       {/* <input type="text" value={query} onChange={handleSearch}></input> */}
       {images.map((image, index) => {
         if (images.length === index + 1) {
-          return <div ref={lastImageElementRef} key={image.id}>
+          return <div ref={lastImageElementRef} key={index}>
             <p>{image.creatorName}</p>
             <img src={image.imageUrl} />
           </div>
         } else {
           return (
-            <div key={image.id}>
-                <img src={image.imageUrl} />
-                <p>{image.creatorName}</p>
+            <div key={index}>
+                <img src={image.imageUrl} alt={image.description}/>
+                <a
+                  className="credit"
+                  target="_blank"
+                  href={`https://unsplash.com/@${image.username}`}
+                >
+                  {image.creatorName}
+                </a>
+                <p>{image.description}</p>
             </div>
           )
         }
