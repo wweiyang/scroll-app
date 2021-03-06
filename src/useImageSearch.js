@@ -8,7 +8,7 @@ export default function useImageSearch(pageNumber) {
   const [hasMore, setHasMore] = useState(false)
 
   // const apiRoot = "https://jsonplaceholder.typicode.com/photos";
-  const apiRoot = "http://api.unsplash.com/";
+  const apiRoot = "https://api.unsplash.com/";
   const accessKey = "6c446b49b72a4c559d9b9d67183d5c1de1981d16f309063c3b994086e6ce1a26";
   const count = 10;
 
