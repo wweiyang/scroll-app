@@ -36,7 +36,7 @@ export default function App() {
         if (images.length === index + 1) {
           return <div ref={lastImageElementRef} key={index}>
             <p>{image.creatorName}</p>
-            <img src={image.imageUrl} />
+            <img src={image.imageUrl} alt={image.description}/>
           </div>
         } else {
           return (
@@ -49,7 +49,6 @@ export default function App() {
                 >
                   {image.creatorName}
                 </a>
-                <p>{image.description}</p>
             </div>
           )
         }
