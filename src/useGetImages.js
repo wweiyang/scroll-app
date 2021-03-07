@@ -16,37 +16,38 @@ export default function useGetImages(pageNumber) {
   useEffect(() => {
     setLoading(true)
     setError(false)
-    // let cancel
 
     axios({
       method: 'GET',
       url: `${baseUrlUnsplash}/photos/random?client_id=${accessKeyUnsplash}&count=${count}&orientation=${orientation}`,
       params: { page: pageNumber },
-      // cancelToken: new axios.CancelToken(c => cancel = c)
     }).then(res => {
       console.log(res)
       console.log("pageNumber: " + pageNumber )
-      setImages(prevImages => {
-        return [...new Set([...prevImages, ...res.data.map(item => {
-          const container = {}
-          
-          container.id = item.id
-          container.altDescription = item.alt_description
-          container.imageUrl = item.urls.regular
-          container.username = item.user.username
-          container.creatorName = item.user.name
 
-          return container
-        })])]
+      // setImages(prevImages => {
+      //   return [...new Set([...prevImages, ...res.data.map(item => {
+      //     const container = {}
+          
+      //     container.id = item.id
+      //     container.altDescription = item.alt_description
+      //     container.imageUrl = item.urls.regular
+      //     container.username = item.user.username
+      //     container.creatorName = item.user.name
+
+      //     return container
+      //   })])]
+      // })
+
+      setImages(prevImages => {
+        return [...prevImages, ...res.data]
       })
+
       setHasMore(res.data.length > 0)
       setLoading(false)
     }).catch(e => {
-      // if (axios.isCancel(e)) return
       setError(true)
     })
-
-    // return () => cancel()
   }, [pageNumber])
 
   return { loading, error, images, hasMore }
