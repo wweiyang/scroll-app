@@ -23,33 +23,37 @@ export default function App() {
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
+  const Post = ({image}) => {
+    return (
+      <div className="post-container">
+        <img src={image.imageUrl} alt={image.description} className="image"/>
+          {/* <a
+            className="creator-name"
+            target="_blank"
+            href={`https://unsplash.com/@${image.username}`}
+          >
+            {image.creatorName}
+          </a> */}
+          <div className="caption">
+            Photo by <a href={`https://unsplash.com/@${image.username}?utm_source=your_app_name&utm_medium=referral`}>{image.creatorName}</a> on <a href="https://unsplash.com/?utm_source=scroll-app&utm_medium=referral">Unsplash</a>
+          </div>
+      </div>
+    )
+  }
+
   return (
     <>
       {images.map((image, index) => {
         if (images.length === index + 1) {
           return (
             <div ref={lastImageElementRef} key={index}>
-              <img src={image.imageUrl} alt={image.description}/>
-              <a
-                className="credit"
-                target="_blank"
-                href={`https://unsplash.com/@${image.username}`}
-              >
-                {image.creatorName}
-              </a>
+              <Post image={image} />
             </div>
           )
         } else {
           return (
             <div key={index}>
-                <img src={image.imageUrl} alt={image.description}/>
-                <a
-                  className="credit"
-                  target="_blank"
-                  href={`https://unsplash.com/@${image.username}`}
-                >
-                  {image.creatorName}
-                </a>
+                <Post image={image} />
             </div>
           )
         }

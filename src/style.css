@@ -3,6 +3,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
+    color: #565867;
+    background-color: #fafafa;
 }
 
 img {
@@ -12,21 +14,36 @@ img {
 
 /* Typography */
 
-.credit {
-    line-height: 1rem;
+a {
     text-decoration-line: underline;
     color: #333;
-  }
+}
+
+a:hover,
+a:focus {
+    text-decoration: none;
+}
 
 
 /* Layout */
 
 .container {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 700px;
     padding: 0 50px;
 }
 
 .title {
     text-align: center;
+    color: #333;
+}
+
+.post-container {
+    margin: 40px 0;
+    border: 1px solid #dbdbdb;
+    background-color: #ffffff;
+}
+
+.caption {
+    margin: 10px;
 }
