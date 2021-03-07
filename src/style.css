@@ -17,3 +17,16 @@ img {
     text-decoration-line: underline;
     color: #333;
   }
+
+
+/* Layout */
+
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 50px;
+}
+
+.title {
+    text-align: center;
+}
