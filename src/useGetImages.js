@@ -16,13 +16,13 @@ export default function useGetImages(pageNumber) {
   useEffect(() => {
     setLoading(true)
     setError(false)
-    let cancel
+    // let cancel
 
     axios({
       method: 'GET',
       url: `${baseUrlUnsplash}/photos/random?client_id=${accessKeyUnsplash}&count=${count}&orientation=${orientation}`,
       params: { page: pageNumber },
-      cancelToken: new axios.CancelToken(c => cancel = c)
+      // cancelToken: new axios.CancelToken(c => cancel = c)
     }).then(res => {
       console.log(res)
       console.log("pageNumber: " + pageNumber )
@@ -42,11 +42,11 @@ export default function useGetImages(pageNumber) {
       setHasMore(res.data.length > 0)
       setLoading(false)
     }).catch(e => {
-      if (axios.isCancel(e)) return
+      // if (axios.isCancel(e)) return
       setError(true)
     })
 
-    return () => cancel()
+    // return () => cancel()
   }, [pageNumber])
 
   return { loading, error, images, hasMore }

@@ -24,8 +24,6 @@ export default function App() {
     if (node) observer.current.observe(node)
   }, [loading, hasMore])
 
-  
-
   return (
     <>
       {images.map((image, index) => {
