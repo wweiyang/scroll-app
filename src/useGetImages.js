@@ -22,9 +22,6 @@ export default function useGetImages(pageNumber) {
       url: `${baseUrlUnsplash}/photos/`,
       params: { client_id: accessKeyUnsplash, page: pageNumber }
     }).then(res => {
-      console.log(res)
-      console.log("pageNumber: " + pageNumber )
-
       setImages(prevImages => {
         return [...prevImages, ...res.data]
       })
