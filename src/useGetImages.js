@@ -19,26 +19,11 @@ export default function useGetImages(pageNumber) {
 
     axios({
       method: 'GET',
-      // url: `${baseUrlUnsplash}/photos/random?client_id=${accessKeyUnsplash}&count=${count}&orientation=${orientation}`,
-      url: `${baseUrlUnsplash}/photos/?client_id=${accessKeyUnsplash}&page=${pageNumber}`,
-      params: { page: pageNumber },
+      url: `${baseUrlUnsplash}/photos/`,
+      params: { client_id: accessKeyUnsplash, page: pageNumber }
     }).then(res => {
       console.log(res)
       console.log("pageNumber: " + pageNumber )
-
-      // setImages(prevImages => {
-      //   return [...new Set([...prevImages, ...res.data.map(item => {
-      //     const container = {}
-          
-      //     container.id = item.id
-      //     container.altDescription = item.alt_description
-      //     container.imageUrl = item.urls.regular
-      //     container.username = item.user.username
-      //     container.creatorName = item.user.name
-
-      //     return container
-      //   })])]
-      // })
 
       setImages(prevImages => {
         return [...prevImages, ...res.data]
