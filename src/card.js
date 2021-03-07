@@ -7,7 +7,6 @@ export default function Card(props) {
 
   return (
     <div className="card-container">
-      {/* <img src={image.urls.regular} alt={image.alt_description} className="image"/> */}
       <LazyLoadImage
         src={image.urls.small}
         alt={image.alt_description}
