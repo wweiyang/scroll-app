@@ -26,7 +26,7 @@ export default function App() {
   const Post = ({image}) => {
     return (
       <div className="post-container">
-        <img src={image.imageUrl} alt={image.description} className="image"/>
+        <img src={image.imageUrl} alt="" className="image"/>
           {/* <a
             className="creator-name"
             target="_blank"
