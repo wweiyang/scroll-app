@@ -31,7 +31,7 @@ export default function useGetImages(pageNumber) {
           const container = {}
           
           container.id = item.id
-          container.description = item.description
+          container.altDescription = item.alt_description
           container.imageUrl = item.urls.regular
           container.username = item.user.username
           container.creatorName = item.user.name

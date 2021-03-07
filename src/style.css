@@ -16,7 +16,7 @@ img {
 
 a {
     text-decoration-line: underline;
-    color: #333;
+    color: #111;
 }
 
 a:hover,
@@ -36,16 +36,16 @@ a:focus {
 .title {
     margin: 0;
     text-align: center;
-    color: #333;
+    color: #111;
 }
 
 .subtitle {
     margin: 0;
     text-align: center;
-    color: #333;
+    color: #111;
 }
 
-.post-container {
+.card-container {
     margin: 40px 0;
     border: 1px solid #dbdbdb;
     background-color: #ffffff;
